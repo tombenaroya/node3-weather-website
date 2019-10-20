@@ -12,13 +12,13 @@ weatherForm.addEventListener('submit', (event) => {
     messageTwo.textContent = '';
 
     fetch(`/weather?adress=${location}`).then((response) => {
-    response.json().then((data) => {
-        if (data.error) {
-            messageOne.textContent = data.error;
-        } else {
-            messageOne.textContent = data.location;
-            messageTwo.textContent = data.forecast;                          
-        }
+        response.json().then((data) => {
+            if (data.error) {
+                messageOne.textContent = data.error;
+            } else {
+                messageOne.textContent = data.location;
+                messageTwo.textContent = data.forecast;                          
+            }
+        });
     });
-});
 });
